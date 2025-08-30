@@ -4,6 +4,14 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
+const box8 = document.querySelector(".box8");
+box8.addEventListener("click", function() {
+    setTimeout(() => {
+        const mensaje = Math.random() < 0.3 ? "大吉" : "小吉";
+        alert(mensaje);
+    }, 1000);
+});
+
 const emailInput = document.getElementById("youremail");
 emailInput.placeholder = "name@company.com"
 
