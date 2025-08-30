@@ -13,16 +13,16 @@
   padding: 16px;
 }
 .box1{
-  width:100%;
+  width:50%;
   height: 80px;
   background: #ffff00;
   display:flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #00008b;
 }
 .box2{
-  width:100%;
+  width:60%;
   height: 80px;
   background: #1e90ff;
   display:flex;
@@ -31,16 +31,16 @@
   color: #fff;
 }
 .box3{
-  width:100%;
+  width:70%;
   height: 80px;
   background: #ffd700;
   display:flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #d2691e;
 }
 .box4{
-  width:100%;
+  width:75%;
   height: 80px;
   background: #ff00ff;
   display:flex;
@@ -49,7 +49,7 @@
   color: #fff;
 }
 .box5{
-  width:100%;
+  width:80%;
   height: 80px;
   background: #800000;
   display:flex;
