@@ -7,7 +7,7 @@ window.addEventListener("load", () => {
 const box8 = document.querySelector(".box8");
 box8.addEventListener("click", function() {
     setTimeout(() => {
-        const mensaje = Math.random() < 0.3 ? "大吉" : "小吉";
+        const mensaje = Math.random() < 0.3 ? "\u{2728} 大吉" : "小吉";
         alert(mensaje);
     }, 1000);
 });
