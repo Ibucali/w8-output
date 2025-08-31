@@ -33,3 +33,14 @@ passwordInput.addEventListener("focus", () => {
 passwordInput.addEventListener("blur", () => {
     contextHelp1.style.display = "none";
 });
+
+const $submitButton = document.querySelector("button[type='submit']");
+const $agregar = document.createElement("div");
+$agregar.classList.add("agregar");
+$agregar.innerHTML = "<span>❤️</span>";
+$submitButton.appendChild($agregar);
+$submitButton.addEventListener("click", (event) => {
+    setTimeout(() => {
+        $agregar.classList.add("animate");
+    }, 100);
+});

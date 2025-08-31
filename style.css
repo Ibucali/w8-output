@@ -166,3 +166,25 @@ a:hover {
     font-size: 0.8em;
     color: #666;
 }
+.agregar span {
+      position: absolute;
+      font-size: 24px;
+      color: red;
+      transform: translateX(80px);
+      transform: translateY(80px);
+}
+
+@keyframes pop {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) scale(1.5); /* 上に飛び出す */
+        opacity: 0;
+    }
+}
+
+.animate {
+    animation: pop 0.8s forwards;
+}
