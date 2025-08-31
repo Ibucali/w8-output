@@ -66,14 +66,30 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 
 
 const $submitButton = document.querySelector("button[type='submit']");
+const hearts = [];
+
+// 5つハートを生成してボタン内に追加
 for (let i = 0; i < 5; i++) {
-const $agregar = document.createElement("div");
-$agregar.classList.add("agregar");
-$agregar.innerHTML = "<span>❤️</span>";
-$submitButton.appendChild($agregar);
-$submitButton.addEventListener("click", () => {
-    setTimeout(() => {
-        $agregar.classList.add("animate");
-    }, 100 * i);
-});
+  const $agregar = document.createElement("div");
+  $agregar.classList.add("agregar");
+  $agregar.innerHTML = "<span>❤️</span>";
+  $submitButton.appendChild($agregar);
+  hearts.push($agregar);
 }
+
+// ❤️がクリックされたら、全部順番にアニメーション
+hearts.forEach((heart) => {
+  heart.addEventListener("click", () => {
+    hearts.forEach((h, j) => {
+      // まずリセット（繰り返し用）
+      h.classList.remove("animate");
+      void h.offsetWidth; // ← ブラウザに再描画させるトリック
+
+      // 順番にクラスを付与
+      setTimeout(() => {
+        h.classList.add("animate");
+      }, 100 * j);
+    });
+  });
+});
+
