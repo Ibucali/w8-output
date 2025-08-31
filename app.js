@@ -4,12 +4,14 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
-const box8 = document.querySelector(".box8");
-box8.addEventListener("click", function() {
-    setTimeout(() => {
-        const mensaje = Math.random() < 0.3 ? "\u{2728} 大吉" : "小吉";
-        alert(mensaje);
-    }, 1000);
+const box8 = document.querySelectorAll(".box8");
+box8.forEach(box => {
+    box.addEventListener("click", function() {
+        setTimeout(() => {
+            const mensaje = Math.random() < 0.3 ? "\u{2728} 大吉" : "小吉";
+            alert(mensaje);
+        }, 1000);
+    });
 });
 
 const emailInput = document.getElementById("youremail");
