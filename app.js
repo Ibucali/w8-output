@@ -66,12 +66,14 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 
 
 const $submitButton = document.querySelector("button[type='submit']");
+for (let i = 0; i < 5; i++) {
 const $agregar = document.createElement("div");
 $agregar.classList.add("agregar");
 $agregar.innerHTML = "<span>❤️</span>";
 $submitButton.appendChild($agregar);
-$submitButton.addEventListener("click", (event) => {
+$submitButton.addEventListener("click", () => {
     setTimeout(() => {
         $agregar.classList.add("animate");
-    }, 100);
+    }, 100 * i);
 });
+}
