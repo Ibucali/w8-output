@@ -212,6 +212,14 @@ a:hover {
   font-size: 36px;
   top: 10px;
   right: 10px;
-  transform: translate(-350px, -10px);
+  transform: translate(-550px, -10px);
+  cursor: pointer;
+}
+.enviarEmoji {
+  position: absolute;
+  font-size: 36px;
+  top: 10px;
+  right: 10px;
+  transform: translate(-280px, -10px);
   cursor: pointer;
 }

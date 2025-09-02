@@ -100,3 +100,8 @@ const comentario = document.createElement("div");
 comentario.classList.add("comentario");
 comentario.innerHTML = "<span>💬</span>";
 $emojiClick.appendChild(comentario);
+
+const enviarEmoji = document.createElement("div");
+enviarEmoji.classList.add("enviarEmoji");
+enviarEmoji.innerHTML = "<span>📤</span>";
+$emojiClick.appendChild(enviarEmoji);
