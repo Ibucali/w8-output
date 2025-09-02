@@ -207,3 +207,11 @@ a:hover {
 .animate {
   animation: pop 0.8s forwards;
 }
+.comentario {
+  position: absolute;
+  font-size: 36px;
+  top: 10px;
+  right: 10px;
+  transform: translate(-350px, -10px);
+  cursor: pointer;
+}

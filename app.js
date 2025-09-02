@@ -96,3 +96,7 @@ hearts.forEach((heart) => {
   });
 });
 
+const comentario = document.createElement("div");
+comentario.classList.add("comentario");
+comentario.innerHTML = "<span>💬</span>";
+$emojiClick.appendChild(comentario);
