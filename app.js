@@ -9,7 +9,6 @@ const wrappers = document.querySelectorAll(".wrapper");
 let clickCount = 0;
 let totalPoints = 0;
 
-// 選べるポイントのリスト
 const pointsList = [10,20,30,40,50,60,70,80,90,100];
 
 wrappers.forEach(wrapper => {
@@ -22,10 +21,10 @@ wrappers.forEach(wrapper => {
       totalPoints += randomPoint;
       clickCount++;
 
-      alert(`${randomPoint} ポイント獲得！`);
+      alert(`${randomPoint} puntos！`);
 
       if (clickCount === 5) {
-        alert(`合計ポイントは ${totalPoints} です 🎉`);
+        alert(`Tu total es ${totalPoints} puntos 🎉`);
       }
     }
   });
@@ -68,9 +67,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const savedEmail = localStorage.getItem("youremail");
   const savedPassword = localStorage.getItem("password");
 
-  console.log("読み込み email:", savedEmail);
-  console.log("読み込み password:", savedPassword);
-
   if (savedEmail) {
     document.getElementById("youremail").value = savedEmail;
   }
@@ -83,7 +79,6 @@ window.addEventListener("DOMContentLoaded", () => {
 const form = document.getElementById("loginForm");
 form.addEventListener("submit", (e) => {
   e.preventDefault(); // テスト用に送信止める
-  console.log("保存処理実行");
 
   const email = document.getElementById("youremail").value;
   const password = document.getElementById("password").value;
