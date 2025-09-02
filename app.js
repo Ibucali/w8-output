@@ -65,16 +65,19 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
 });
 
 
-const $submitButton = document.querySelector("button[type='submit']");
+const $emojiClick = document.querySelector(".crear");
 const hearts = [];
 
 // 5つハートを生成してボタン内に追加
 for (let i = 0; i < 5; i++) {
   const $agregar = document.createElement("div");
   $agregar.classList.add("agregar");
-  $agregar.innerHTML = "<span>❤️</span>";
-  $submitButton.appendChild($agregar);
-  hearts.push($agregar);
+
+  // ラッパーを作って span を入れる
+  $agregar.innerHTML = '<div class="heart-wrap"><span>❤️</span></div>';
+
+  $emojiClick.appendChild($agregar);
+  hearts.push($agregar.querySelector("span"));
 }
 
 // ❤️がクリックされたら、全部順番にアニメーション

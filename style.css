@@ -166,25 +166,44 @@ a:hover {
     font-size: 0.8em;
     color: #666;
 }
-.agregar span {
-      position: absolute;
-      font-size: 24px;
-      color: red;
-      transform: translateX(80px);
-      transform: translateY(80px);
+.crear {
+  margin-top: 20px;
+  position: relative;
+  height: 120px; /* ハートが飛ぶスペース */
 }
 
+.agregar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%); /* 中央寄せ */
+}
+
+.heart-wrap {
+  position: relative; 
+  /* ここで位置調整が完結するので transform が競合しない */
+}
+
+.heart-wrap span {
+  font-size: 36px;
+  color: red;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+/* 飛び出すアニメーション（span にだけ効く） */
 @keyframes pop {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-100px) scale(1.5); /* 上に飛び出す */
-        opacity: 0;
-    }
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100px) scale(1.5);
+    opacity: 0;
+  }
 }
 
 .animate {
-    animation: pop 0.8s forwards;
+  animation: pop 0.8s forwards;
 }
