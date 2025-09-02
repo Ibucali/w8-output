@@ -80,7 +80,8 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // フォーム送信時に入力値を保存
-document.getElementById("loginForm").addEventListener("submit", (e) => {
+const form = document.getElementById("loginForm");
+form.addEventListener("submit", (e) => {
   e.preventDefault(); // テスト用に送信止める
   console.log("保存処理実行");
 
