@@ -4,6 +4,7 @@
   gap: 16px;
   background: #ddd;
   padding: 16px;
+  cursor: pointer;
 }
 .wrapper1{
   display: flex;

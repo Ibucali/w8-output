@@ -4,6 +4,33 @@ window.addEventListener("load", () => {
     }, 1000);
 });
 
+const wrappers = document.querySelectorAll(".wrapper");
+
+let clickCount = 0;
+let totalPoints = 0;
+
+// 選べるポイントのリスト
+const pointsList = [10,20,30,40,50,60,70,80,90,100];
+
+wrappers.forEach(wrapper => {
+  wrapper.addEventListener("click", function(e) {
+    // wrapper全体じゃなく box 個別クリックのみ有効にする
+    if (!e.target.className.startsWith("box")) return;
+
+    if (clickCount < 5) {
+      const randomPoint = pointsList[Math.floor(Math.random() * pointsList.length)];
+      totalPoints += randomPoint;
+      clickCount++;
+
+      alert(`${randomPoint} ポイント獲得！`);
+
+      if (clickCount === 5) {
+        alert(`合計ポイントは ${totalPoints} です 🎉`);
+      }
+    }
+  });
+});
+
 const box8 = document.querySelectorAll(".box8");
 box8.forEach(box => {
     box.addEventListener("click", function() {
