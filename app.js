@@ -13,7 +13,7 @@ const pointsList = [10,20,30,40,50,60,70,80,90,100];
 
 wrappers.forEach(wrapper => {
   wrapper.addEventListener("click", function(e) {
-    // wrapper全体じゃなく box 個別クリックのみ有効にする
+    
     if (!e.target.className.startsWith("box")) return;
 
     if (clickCount < 5) {
@@ -99,7 +99,6 @@ for (let i = 0; i < 5; i++) {
   const $agregar = document.createElement("div");
   $agregar.classList.add("agregar");
 
-  // ラッパーを作って span を入れる
   $agregar.innerHTML = '<div class="heart-wrap"><span>❤️</span></div>';
 
   $emojiClick.appendChild($agregar);
@@ -112,7 +111,7 @@ hearts.forEach((heart) => {
     hearts.forEach((h, j) => {
       // まずリセット（繰り返し用）
       h.classList.remove("animate");
-      void h.offsetWidth; // ← ブラウザに再描画させるトリック
+      void h.offsetWidth; 
 
       // 順番にクラスを付与
       setTimeout(() => {
