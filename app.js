@@ -26,6 +26,9 @@ wrappers.forEach(wrapper => {
       if (clickCount === 5) {
         alert(`Tu total es ${totalPoints} puntos 🎉`);
       }
+      if (totalPoints >= 300) {
+        alert("🎉 Felicidades! Has alcanzado 300 puntos.");
+      }
     }
   });
 });
