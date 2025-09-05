@@ -215,7 +215,12 @@ a:hover {
   top: 10px;
   right: 10px;
   transform: translate(-530px, -10px);
+  font-size: 35px;
+  transition: font-size 0.3s ease;
   cursor: pointer;
+}
+.comentario.zoomed {
+  font-size: 105px;
 }
 .enviarEmoji {
   position: absolute;
@@ -224,6 +229,20 @@ a:hover {
   right: 10px;
   transform: translate(-800px, -10px);
   cursor: pointer;
+}
+.enviarEmoji {
+  transition: transform 1.5s ease-in-out;
+  transform-origin: center center;
+}
+
+/* ホバー時に右移動＋拡大 */
+.enviarEmoji.moveZoom {
+  transform: scale(2.5);
+}
+
+/* 元の位置に戻る */
+.enviarEmoji.resetZoom {
+  transform: scale(1) translateX(-810px) translateY(-10px);
 }
 #buttoon{
   width: 150px;
@@ -255,25 +274,4 @@ a:hover {
   border-radius: 8px;
   margin: 30px;
   cursor: pointer;
-}
-.comentario {
-  font-size: 35px;
-  transition: font-size 0.3s ease;
-}
-.comentario.zoomed {
-  font-size: 105px;
-}
-.enviarEmoji {
-  transition: transform 1.5s ease-in-out;
-  transform-origin: center center;
-}
-
-/* ホバー時に右移動＋拡大 */
-.enviarEmoji.moveZoom {
-  transform: scale(2.5);
-}
-
-/* 元の位置に戻る */
-.enviarEmoji.resetZoom {
-  transform: scale(1) translateX(-810px) translateY(-10px);
 }
