@@ -153,7 +153,7 @@ $emojiClick.appendChild(enviarEmoji);
 
 const $butttoo = document.querySelector("#buttoon");
 $butttoo.addEventListener("click", function(){ 
-  alert("❤️ Gracias por tu apoyo! ❤️ "); 
+  alert("\u{1F49B} Gracias por tu apoyo! \u{1F49B} "); 
 });
 
 const $hoge = document.querySelector("#hacerClick");
@@ -163,6 +163,6 @@ for (let i = 1; i < 6; i++) {
   $multipleButton.innerHTML = "butttooo" + i;
   $hoge.appendChild($multipleButton);
   $multipleButton.addEventListener("click", function(){ 
-    alert("❤️ Gracias por tu apoyo! ❤️ ");
+    alert("\u{1F493} Gracias por tu apoyo! \u{1F493} ");
   });
 }
