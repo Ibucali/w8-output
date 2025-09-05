@@ -129,6 +129,12 @@ $emojiClick.appendChild(comentario);
 const enviarEmoji = document.createElement("div");
 enviarEmoji.classList.add("enviarEmoji");
 enviarEmoji.innerHTML = "<span>📤</span>";
+enviarEmoji.addEventListener("mouseover", () => {
+  enviarEmoji.classList.add("zoomed")
+  enviarEmoji.classList.remove("zoomed")
+  enviarEmoji.style.transform = "scale(2.5)";
+  enviarEmoji.style.transition = "transform 0.8s ease-in-out";
+})
 $emojiClick.appendChild(enviarEmoji);
 
 const $butttoo = document.querySelector("#buttoon");
