@@ -130,3 +130,19 @@ const enviarEmoji = document.createElement("div");
 enviarEmoji.classList.add("enviarEmoji");
 enviarEmoji.innerHTML = "<span>📤</span>";
 $emojiClick.appendChild(enviarEmoji);
+
+const $butttoo = document.querySelector("#buttoon");
+$butttoo.addEventListener("click", function(){ 
+  alert("❤️ Gracias por tu apoyo! ❤️ "); 
+});
+
+const $hoge = document.querySelector("#hacerClick");
+for (let i = 1; i < 6; i++) {
+  const $multipleButton = document.createElement("button");
+  $multipleButton.classList.add("btn", "btn-primary");
+  $multipleButton.innerHTML = "butttooo" + i;
+  $hoge.appendChild($multipleButton);
+  $multipleButton.addEventListener("click", function(){ 
+    alert("❤️ Gracias por tu apoyo! ❤️ ");
+  });
+}
