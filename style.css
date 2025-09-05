@@ -133,6 +133,7 @@ input[type="text"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
+  transform: translateX(-11.5px);
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -254,4 +255,18 @@ a:hover {
   border-radius: 8px;
   margin: 30px;
   cursor: pointer;
+}
+.enviarEmoji {
+  transition: transform 1.5s ease-in-out;
+  transform-origin: center center;
+}
+
+/* ホバー時に右移動＋拡大 */
+.enviarEmoji.moveZoom {
+  transform: scale(2.5);
+}
+
+/* 元の位置に戻る */
+.enviarEmoji.resetZoom {
+  transform: scale(1) translateX(-810px) translateY(-10px);
 }

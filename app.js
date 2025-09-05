@@ -129,12 +129,18 @@ $emojiClick.appendChild(comentario);
 const enviarEmoji = document.createElement("div");
 enviarEmoji.classList.add("enviarEmoji");
 enviarEmoji.innerHTML = "<span>📤</span>";
+// マウスホバーで右に移動＋拡大
 enviarEmoji.addEventListener("mouseover", () => {
-  enviarEmoji.classList.add("zoomed")
-  enviarEmoji.classList.remove("zoomed")
-  enviarEmoji.style.transform = "scale(2.5)";
-  enviarEmoji.style.transition = "transform 0.8s ease-in-out";
-})
+  enviarEmoji.classList.remove("resetZoom"); // 戻り状態をリセット
+  enviarEmoji.classList.add("moveZoom");
+});
+
+// クリックで元の位置に戻す
+enviarEmoji.addEventListener("click", () => {
+  enviarEmoji.classList.remove("moveZoom");
+  enviarEmoji.classList.add("resetZoom");
+});
+
 $emojiClick.appendChild(enviarEmoji);
 
 const $butttoo = document.querySelector("#buttoon");
