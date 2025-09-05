@@ -251,7 +251,7 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  transform: translateX(585px);
+  transform: translateX(590px);
   color: #fff;
   border-radius: 8px;
   margin: 30px;
@@ -268,7 +268,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  transform: translateX(165px);
+  transform: translateX(170px);
   color: #fff;
   border-radius: 8px;
   margin: 30px;
