@@ -126,6 +126,14 @@ comentario.classList.add("comentario");
 comentario.innerHTML = "<span>💬</span>";
 $emojiClick.appendChild(comentario);
 
+comentario.addEventListener("mouseover", () => {
+  comentario.classList.add("zoomed");
+});
+comentario.addEventListener("mouseout", () => {
+  comentario.classList.remove("zoomed")
+});
+
+
 const enviarEmoji = document.createElement("div");
 enviarEmoji.classList.add("enviarEmoji");
 enviarEmoji.innerHTML = "<span>📤</span>";

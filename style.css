@@ -256,6 +256,13 @@ a:hover {
   margin: 30px;
   cursor: pointer;
 }
+.comentario {
+  font-size: 35px;
+  transition: font-size 0.3s ease;
+}
+.comentario.zoomed {
+  font-size: 105px;
+}
 .enviarEmoji {
   transition: transform 1.5s ease-in-out;
   transform-origin: center center;
