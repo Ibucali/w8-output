@@ -24,10 +24,10 @@ wrappers.forEach(wrapper => {
       alert(`${randomPoint} puntos！`);
 
       if (clickCount === 5) {
-        alert(`Tu total es ${totalPoints} puntos 🎉`);
+        alert(`Tu total es ${totalPoints} puntos \u{1F389}`);
       }
       if (totalPoints >= 300) {
-        alert("🎉 Felicidades! Has alcanzado 300 puntos.");
+        alert("\u{1F38A} Felicidades! Has alcanzado 300 puntos.");
       }
     }
   });
