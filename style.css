@@ -236,7 +236,7 @@ a:hover {
 
 /* ホバー時に右移動＋拡大 */
 .enviarEmoji.moveZoom {
-  transform: scale(2.5);
+  transform: scale(3.3);
 }
 
 /* 元の位置に戻る */
