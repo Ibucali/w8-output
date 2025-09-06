@@ -1,8 +1,16 @@
-window.addEventListener("load", () => {
-    setTimeout(() => {
-        alert("ボタンのどれかをクリックするとイベントが発生するかも");
-    }, 1000);
-});
+
+document.body.animate(
+  {
+    // 背景色を #fcc から rgba(233, 48, 187, 1) に変化させる
+    background: ["#fcc", "rgba(233, 48, 187, 1)"],
+  },
+  {
+    // 終了時の状態で止める
+    fill: "forwards",
+    // 3000ミリ秒（＝3秒）かけてアニメーション
+    duration: 3000
+  }
+);
 
 const wrappers = document.querySelectorAll(".wrapper");
 
