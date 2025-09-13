@@ -276,3 +276,68 @@ a:hover {
   margin: 30px;
   cursor: pointer;
 }
+
+@media screen and (max-width: 780px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+  .box6, .box7, .box8, .box9, .box10 {
+    transform: translateX(0);
+  }
+  .wrapper1{
+    flex-direction: column;
+    align-items: center;
+  }
+  .enviarEmoji {
+    transform: scale(1) translateX(-10px) translateY(-10px);
+  }
+  .btn-primary {
+    transform: translateX(0);
+  }
+  #buttoon{
+    transform: translateX(0);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .box1, .box2, .box3, .box4, .box5 {
+    width: 100%;
+  }
+
+  .box6, .box7, .box8, .box9, .box10 {
+    width: 100%;
+    transform: translateX(0);
+  }
+  .enviarEmoji {
+    transform: scale(1) translateX(-10px) translateY(-10px);
+  }
+  .btn-primary {
+    transform: translateX(0);
+  }
+  #buttoon{
+    transform: translateX(0);
+  }
+}
+@media screen and (max-width: 300px) {
+  .box1, .box2, .box3, .box4, .box5 {
+    width: 100%;
+    font-size: 12px; /* フォントサイズを小さくする */
+  }
+
+  .box6, .box7, .box8, .box9, .box10 {
+    width: 100%;
+    transform: translateX(0);
+    font-size: 12px; /* フォントサイズを小さくする */
+  }
+  .enviarEmoji {
+    transform: scale(1) translateX(-10px) translateY(-10px);
+  }
+  .btn-primary {
+    transform: translateX(0);
+    font-size: 12px; /* フォントサイズを小さくする */
+  }
+  #buttoon{
+    transform: translateX(0);
+    font-size: 12px; /* フォントサイズを小さくする */
+  }
+}
