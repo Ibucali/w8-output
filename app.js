@@ -133,14 +133,37 @@ enviarEmoji.classList.add("enviarEmoji");
 enviarEmoji.innerHTML = "<span>📩</span>";
 $emojiClick.insertBefore(enviarEmoji, heartsContainer);
 
-enviarEmoji.addEventListener("mouseover", () => {
-  enviarEmoji.classList.remove("resetZoom");
-  enviarEmoji.classList.add("moveZoom");
-});
-enviarEmoji.addEventListener("click", () => {
-  enviarEmoji.classList.remove("moveZoom");
-  enviarEmoji.classList.add("resetZoom");
-});
+// PC では hover、スマホでは click を hover の代わりに使う
+if (window.matchMedia("(hover: hover)").matches) {
+  // ===== PC用（hover対応デバイス） =====
+  enviarEmoji.addEventListener("mouseover", () => {
+    enviarEmoji.classList.add("moveZoom");
+    enviarEmoji.classList.remove("resetZoom");
+  });
+  enviarEmoji.addEventListener("mouseout", () => {
+    enviarEmoji.classList.remove("moveZoom");
+  });
+  enviarEmoji.addEventListener("click", () => {
+    enviarEmoji.classList.remove("moveZoom");
+    enviarEmoji.classList.add("resetZoom");
+  });
+} else {
+  // ===== スマホ用（hover非対応デバイス） =====
+  let zoomed = false;
+  enviarEmoji.addEventListener("click", () => {
+    if (!zoomed) {
+      // hover の代わりに拡大
+      enviarEmoji.classList.add("moveZoom");
+      enviarEmoji.classList.remove("resetZoom");
+      zoomed = true;
+    } else {
+      // click で戻す
+      enviarEmoji.classList.remove("moveZoom");
+      enviarEmoji.classList.add("resetZoom");
+      zoomed = false;
+    }
+  });
+}
 
 // 💬
 const comentario = document.createElement("div");
