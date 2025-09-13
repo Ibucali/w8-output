@@ -194,3 +194,45 @@ for (let i = 1; i < 6; i++) {
     alert("\u{1F493} Gracias por tu apoyo! \u{1F493} ");
   });
 }
+function applyResponsiveStyles() {
+  const hacerClick = document.getElementById("hacerClick");
+  const buttoon = document.getElementById("buttoon");
+  const enviarEmoji = document.querySelector(".enviarEmoji");
+  const comentario = document.querySelector(".comentario");
+
+  // 780px 以下
+  if (window.matchMedia("(max-width: 780px)").matches) {
+    document.querySelectorAll(".box6, .box7, .box8, .box9, .box10")
+      .forEach(el => el.style.transform = "translateX(0)");
+    if (hacerClick) {
+      hacerClick.style.display = "grid";
+      hacerClick.style.gridTemplateColumns = "repeat(3, 150px)";
+      hacerClick.style.justifyContent = "center";
+    }
+    if (buttoon) {
+      buttoon.style.transform = "translateX(0)";
+      buttoon.style.width = "80%";
+    }
+  }
+
+  // 400px 以下
+  if (window.matchMedia("(max-width: 400px)").matches) {
+    document.querySelectorAll(".box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10")
+      .forEach(el => {
+        el.style.width = "100%";
+        el.style.transform = "translateX(0)";
+      });
+    if (buttoon) buttoon.style.transform = "translateX(0)";
+  }
+
+  // 300px 以下
+  if (window.matchMedia("(max-width: 300px)").matches) {
+    document.querySelectorAll(".box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10")
+      .forEach(el => el.style.fontSize = "12px");
+    if (buttoon) buttoon.style.fontSize = "12px";
+  }
+}
+
+// 初期化とリサイズ対応
+window.addEventListener("DOMContentLoaded", applyResponsiveStyles);
+window.addEventListener("resize", applyResponsiveStyles);
