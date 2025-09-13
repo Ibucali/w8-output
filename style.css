@@ -302,12 +302,23 @@ a:hover {
   }
   .enviarEmoji {
     transform: scale(1) translateX(-10px) translateY(-10px);
+    margin-top: 15px;
+  }
+  .comentario {
+    margin-top: 5px;
   }
   .btn-primary {
     transform: translateX(0);
   }
   #buttoon{
     transform: translateX(0);
+  }
+  #buttoon, .btn-primary { 
+    width: 80%; 
+  }
+   #hacerClick{
+    display: block;
+    gap: 10px;
   }
 }
 
