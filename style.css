@@ -220,9 +220,18 @@ a:hover {
   cursor: pointer;
   transition: transform 1.5s ease-in-out;
   transform-origin: center center;
+  display: inline-block; /* transform の影響を受けやすくする */
 }
-.enviarEmoji.moveZoom { transform: scale(3.3); }
-.enviarEmoji.resetZoom { transform: scale(1); }
+
+.enviarEmoji.moveRightZoom {
+  /* 右に 350px 移動しながら拡大 */
+  transform: translateX(350px) scale(3.3);
+}
+
+.enviarEmoji.resetZoom {
+  /* 元の位置・サイズに戻す */
+  transform: translateX(0) scale(1);
+}
 
 /* ▼ スマホ幅 300px以下対応 */
 @media screen and (max-width: 300px) {
