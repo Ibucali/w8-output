@@ -172,79 +172,91 @@ a:hover {
 .crear {
   margin-top: 20px;
   position: relative;
-  transform: translateY(35px);
-  height: 120px; /* ハートが飛ぶスペース */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;          /* PCでは広めに間隔 */
+  flex-wrap: nowrap;
+  height: 120px;      /* ❤️が飛ぶスペース */
 }
 
-.agregar {
+/* ❤️用コンテナ */
+.hearts-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.hearts-container .agregar {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%); /* 中央寄せ */
+  transform: translateX(-50%);
 }
-
-.heart-wrap {
-  position: relative; 
-  /* ここで位置調整が完結するので transform が競合しない */
-}
-
 .heart-wrap span {
   font-size: 36px;
   color: red;
   cursor: pointer;
   display: inline-block;
-  position: relative;
 }
 
-/* 飛び出すアニメーション（span にだけ効く） */
+/* ❤️飛び出すアニメーション（PC用） */
 @keyframes pop {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) scale(1.5);
-    opacity: 0;
-  }
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-100px) scale(1.5); opacity: 0; }
 }
+.animate { animation: pop 0.8s forwards; }
 
-.animate {
-  animation: pop 0.8s forwards;
-}
+/* 💬 */
 .comentario {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  transform: translate(-530px, -10px);
   font-size: 35px;
+  cursor: pointer;
   transition: font-size 0.3s ease;
-  cursor: pointer;
 }
-.comentario.zoomed {
-  font-size: 105px;
-}
+.comentario.zoomed { font-size: 105px; }
+
+/* 📩 */
 .enviarEmoji {
-  position: absolute;
   font-size: 36px;
-  top: 10px;
-  right: 10px;
-  transform: translate(-810px, -10px);
   cursor: pointer;
-}
-.enviarEmoji {
   transition: transform 1.5s ease-in-out;
   transform-origin: center center;
 }
+.enviarEmoji.moveZoom { transform: scale(3.3); }
+.enviarEmoji.resetZoom { transform: scale(1); }
 
-/* ホバー時に右移動＋拡大 */
-.enviarEmoji.moveZoom {
-  transform: scale(3.3);
+/* ▼ スマホ幅 300px以下対応 */
+@media screen and (max-width: 300px) {
+  .crear {
+    gap: 0;                 /* 間隔なし */
+    justify-content: center;
+  }
+
+  /* 📩❤️💬 を等幅配置 */
+  .crear > .enviarEmoji,
+  .crear > .hearts-container,
+  .crear > .comentario {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* アイコン縮小 */
+  .heart-wrap span,
+  .enviarEmoji,
+  .comentario {
+    font-size: 24px;
+  }
+  .comentario.zoomed { font-size: 70px; }
+
+  /* ❤️飛び高さ縮小（モバイル用） */
+  @keyframes popMobile {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-60px) scale(1.3); opacity: 0; }
+  }
+  .animate {
+    animation: popMobile 0.8s forwards;
+  }
 }
 
-/* 元の位置に戻る */
-.enviarEmoji.resetZoom {
-  transform: scale(1) translateX(-810px) translateY(-10px);
-}
 #buttoon{
   width: 150px;
   height: 50px;

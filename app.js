@@ -1,4 +1,3 @@
-
 document.body.animate(
   {
     // 背景色を #fcc から rgba(233, 48, 187, 1) に変化させる
@@ -100,28 +99,27 @@ form.addEventListener("submit", (e) => {
 
 
 const $emojiClick = document.querySelector(".crear");
-const hearts = [];
 
-// 5つハートを生成してボタン内に追加
+// ❤️用コンテナ
+const heartsContainer = document.createElement("div");
+heartsContainer.classList.add("hearts-container");
+$emojiClick.appendChild(heartsContainer);
+
+const hearts = [];
 for (let i = 0; i < 5; i++) {
   const $agregar = document.createElement("div");
   $agregar.classList.add("agregar");
-
   $agregar.innerHTML = '<div class="heart-wrap"><span>❤️</span></div>';
-
-  $emojiClick.appendChild($agregar);
+  heartsContainer.appendChild($agregar);
   hearts.push($agregar.querySelector("span"));
 }
 
-// ❤️がクリックされたら、全部順番にアニメーション
+// ❤️クリックで5つ順番に飛ぶ
 hearts.forEach((heart) => {
   heart.addEventListener("click", () => {
     hearts.forEach((h, j) => {
-      // まずリセット（繰り返し用）
       h.classList.remove("animate");
-      void h.offsetWidth; 
-
-      // 順番にクラスを付与
+      void h.offsetWidth; // 強制リフロー
       setTimeout(() => {
         h.classList.add("animate");
       }, 100 * j);
@@ -129,6 +127,22 @@ hearts.forEach((heart) => {
   });
 });
 
+// 📩
+const enviarEmoji = document.createElement("div");
+enviarEmoji.classList.add("enviarEmoji");
+enviarEmoji.innerHTML = "<span>📩</span>";
+$emojiClick.insertBefore(enviarEmoji, heartsContainer);
+
+enviarEmoji.addEventListener("mouseover", () => {
+  enviarEmoji.classList.remove("resetZoom");
+  enviarEmoji.classList.add("moveZoom");
+});
+enviarEmoji.addEventListener("click", () => {
+  enviarEmoji.classList.remove("moveZoom");
+  enviarEmoji.classList.add("resetZoom");
+});
+
+// 💬
 const comentario = document.createElement("div");
 comentario.classList.add("comentario");
 comentario.innerHTML = "<span>💬</span>";
@@ -138,26 +152,8 @@ comentario.addEventListener("mouseover", () => {
   comentario.classList.add("zoomed");
 });
 comentario.addEventListener("mouseout", () => {
-  comentario.classList.remove("zoomed")
+  comentario.classList.remove("zoomed");
 });
-
-
-const enviarEmoji = document.createElement("div");
-enviarEmoji.classList.add("enviarEmoji");
-enviarEmoji.innerHTML = "<span>📤</span>";
-// マウスホバーで右に移動＋拡大
-enviarEmoji.addEventListener("mouseover", () => {
-  enviarEmoji.classList.remove("resetZoom"); // 戻り状態をリセット
-  enviarEmoji.classList.add("moveZoom");
-});
-
-// クリックで元の位置に戻す
-enviarEmoji.addEventListener("click", () => {
-  enviarEmoji.classList.remove("moveZoom");
-  enviarEmoji.classList.add("resetZoom");
-});
-
-$emojiClick.appendChild(enviarEmoji);
 
 const $butttoo = document.querySelector("#buttoon");
 $butttoo.addEventListener("click", function(){ 
