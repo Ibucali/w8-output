@@ -325,12 +325,25 @@ a:hover {
   #buttoon { 
     width: 80%; 
   }
-   #hacerClick{
-    display: block;
+  #hacerClick {
+    display: grid;
+    grid-template-columns: repeat(3, 150px); /* 3列枠 */
     gap: 10px;
+    justify-content: center; /* 全体を中央寄せ */
   }
+
   .btn-primary {
-    width: 150px;
+    width: 100px;
+  }
+
+  /* 4つ目・5つ目の位置を明示的に指定 */
+  #hacerClick button:nth-child(4) {
+    grid-column: 2; /* 2列目に置く */
+    transform: translateX(-75px)
+  }
+  #hacerClick button:nth-child(5) {
+    grid-column: 3; /* 3列目に置く */
+    transform: translateX(-75px);
   }
 }
 
