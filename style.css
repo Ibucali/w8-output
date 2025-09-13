@@ -224,7 +224,7 @@ a:hover {
 }
 
 .enviarEmoji.moveRightZoom {
-  transform: translateX(150px) scale(3); /* 右に150px移動＋3倍拡大 */
+  transform: translateX(350px) scale(3); /* 右に150px移動＋3倍拡大 */
 }
 
 .enviarEmoji.resetZoom {
