@@ -133,34 +133,37 @@ enviarEmoji.classList.add("enviarEmoji");
 enviarEmoji.innerHTML = "<span>📩</span>";
 $emojiClick.insertBefore(enviarEmoji, heartsContainer);
 
-// PC用（hover対応デバイス）
-if (window.matchMedia("(hover: hover)").matches) {
-  enviarEmoji.addEventListener("mouseover", () => {
+let zoomed = false;
+
+enviarEmoji.addEventListener("mouseenter", () => {
+  // PC の hover 代わり
+  if (!("ontouchstart" in window)) {
     enviarEmoji.classList.add("moveRightZoom");
     enviarEmoji.classList.remove("resetZoom");
-  });
+  }
+});
 
-  enviarEmoji.addEventListener("click", () => {
-    // クリックで元に戻す
+enviarEmoji.addEventListener("mouseleave", () => {
+  // PC で hover を外したら戻す
+  if (!("ontouchstart" in window)) {
     enviarEmoji.classList.remove("moveRightZoom");
     enviarEmoji.classList.add("resetZoom");
-  });
+  }
+});
 
-} else {
-  // スマホ用（hover非対応デバイス）
-  let zoomed = false;
-  enviarEmoji.addEventListener("click", () => {
-    if (!zoomed) {
-      enviarEmoji.classList.add("moveRightZoom");
-      enviarEmoji.classList.remove("resetZoom");
-      zoomed = true;
-    } else {
-      enviarEmoji.classList.remove("moveRightZoom");
-      enviarEmoji.classList.add("resetZoom");
-      zoomed = false;
-    }
-  });
-}
+enviarEmoji.addEventListener("click", () => {
+  // スマホ・PC 共通のクリック処理
+  if (!zoomed) {
+    enviarEmoji.classList.add("moveRightZoom");
+    enviarEmoji.classList.remove("resetZoom");
+    zoomed = true;
+  } else {
+    enviarEmoji.classList.remove("moveRightZoom");
+    enviarEmoji.classList.add("resetZoom");
+    zoomed = false;
+  }
+});
+
 
 
 // 💬
