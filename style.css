@@ -320,13 +320,17 @@ a:hover {
   }
   #buttoon{
     transform: translateX(0);
+    width: 80%;
   }
-  #buttoon, .btn-primary { 
+  #buttoon, { 
     width: 80%; 
   }
    #hacerClick{
     display: block;
     gap: 10px;
+  }
+  .btn-primary {
+    width: 150px;
   }
 }
 
