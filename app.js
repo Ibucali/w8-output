@@ -1,12 +1,9 @@
 document.body.animate(
   {
-    // 背景色を #fcc から rgba(233, 48, 187, 1) に変化させる
     background: ["#fcc", "rgba(233, 48, 187, 1)"],
   },
   {
-    // 終了時の状態で止める
     fill: "forwards",
-    // 3000ミリ秒（＝3秒）かけてアニメーション
     duration: 3000
   }
 );
@@ -88,7 +85,7 @@ window.addEventListener("DOMContentLoaded", () => {
 // フォーム送信時に入力値を保存
 const form = document.getElementById("loginForm");
 form.addEventListener("submit", (e) => {
-  e.preventDefault(); // テスト用に送信止める
+  e.preventDefault(); 
 
   const email = document.getElementById("youremail").value;
   const password = document.getElementById("password").value;
@@ -100,7 +97,7 @@ form.addEventListener("submit", (e) => {
 
 const $emojiClick = document.querySelector(".crear");
 
-// ❤️用コンテナ
+
 const heartsContainer = document.createElement("div");
 heartsContainer.classList.add("hearts-container");
 $emojiClick.appendChild(heartsContainer);
@@ -114,12 +111,12 @@ for (let i = 0; i < 5; i++) {
   hearts.push($agregar.querySelector("span"));
 }
 
-// ❤️クリックで5つ順番に飛ぶ
+
 hearts.forEach((heart) => {
   heart.addEventListener("click", () => {
     hearts.forEach((h, j) => {
       h.classList.remove("animate");
-      void h.offsetWidth; // 強制リフロー
+      void h.offsetWidth; 
       setTimeout(() => {
         h.classList.add("animate");
       }, 100 * j);
