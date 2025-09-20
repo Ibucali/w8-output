@@ -157,6 +157,8 @@
   gap: 20px;
 }
 .grid-item2 {
+  display: flex;
+  justify-content: center;
   background-color: lightblue;
   padding: 20px;
   text-align: center;
